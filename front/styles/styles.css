@@ -58,16 +58,6 @@ body {
     color: #ff6347; 
 }
 
-#sound-icon {
-    font-size: 1.5rem;
-    color: white;
-    cursor: pointer;
-}
-
-#sound-icon.muted {
-    color: gray;
-}
-
 main {
     flex:1;
 }
@@ -122,6 +112,13 @@ main {
     text-align: center;
     color: white;
     font-family: 'Open Sans', sans-serif;
+}
+
+.card img {
+    width: 100%;
+    height: auto;
+    border-radius: 10px;
+    object-fit: cover;
 }
 
 .card h3 {
