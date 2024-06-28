@@ -1,6 +1,59 @@
 //console.log(tempData);
 
-// función para crear las tarjetas de películas
+class Movie {
+    constructor(poster, title, director, year, duration, genre, rate) {
+        this.poster = poster;
+        this.title = title;
+        this.director = director;
+        this.year = year;
+        this.duration = duration;
+        this.genre = genre;
+        this.rate = rate;
+    }
+}
+
+class Repository {
+    constructor() {
+        this.movies = [];
+    }
+
+    createMovie(movieData) {
+        movieData.forEach(movie => {
+            const newMovie = new Movie(
+                movie.poster,
+                movie.title,
+                movie.director,
+                movie.year,
+                movie.duration,
+                movie.genre,
+                movie.rate
+            );
+            this.movies.push(newMovie);
+        });
+    }
+}
+
+const repository = new Repository();
+
+const loadMovies = () => {
+    const movieContainer = document.querySelector('.containercards');
+    const movies = repository.movies;
+
+    movies.forEach(movie => {
+        const card = createMovieCard(movie);
+        movieContainer.appendChild(card);
+    });
+};
+
+const addMovies = () => {
+    $.get('https://api.1rodemayo.com/movies/', (data, status) => {
+        repository.createMovie(data);
+        loadMovies();
+    }).fail((error) => {
+        console.error('Error loading movies:', error);
+    });
+};
+
 function createMovieCard(movie) {
     const card = document.createElement('div');
     card.classList.add('card');
@@ -16,27 +69,9 @@ function createMovieCard(movie) {
     return card;
 }
 
-// función para renderizar las tarjetas
-function renderMovies(movies) {
-    const container = document.querySelector('.containercards');
-    container.innerHTML = ''; // Limpiar el contenedor antes de renderizar
-    movies.forEach(movie => {
-        const card = createMovieCard(movie);
-        container.appendChild(card);
-    });
-}
+$(document).ready(addMovies);
 
-// función para obtener los datos del servidor usando jQuery
-function loadMovies() {
-    $.get('https://api.1rodemayo.com/movies/', (data) => {
-        renderMovies(data);
-    }).fail((error) => {
-        console.error('Error loading movies:', error);
-    });
-}
 
-// Llamar a la función para obtener y renderizar los datos al cargar la página
-$(document).ready(loadMovies);
 
 
 //document.addEventListener('DOMContentLoaded', function() {
