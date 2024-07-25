@@ -40,10 +40,10 @@ function createMovieCard(movie) {
 
 const axios = require("axios");
 
-const promise = axios.get("https://api.1rodemayo.com/movies/");
+const promise = axios.get("http://localhost:3001/movies");
 
 promise.then((res) => {
-    repository.createMovie(res.data);
+    repository.createMovie(res.data.data);
     loadMovies();
 }).catch((err) => {
     console.log('Error loading movies: ' + err.message);
