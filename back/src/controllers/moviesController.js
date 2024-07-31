@@ -15,7 +15,7 @@ async function getMovies(req, res) {
     } catch (err) {
         res.status(500).json({
             message: "Error al obtener las películas",
-            error: err.message
+            data: error.message,
         });
     }
 }
@@ -26,12 +26,12 @@ async function postMovies(req, res) {
         await createMovie(newMovieData);
         res.status(200).json({
             message: "Se creó la nueva película con éxito",
-            data: newMovieData,
+            data: newMovieData
         });
     } catch (err) {
         res.status(500).json({
             message: "Error al crear la película",
-            error: err.message
+            data: err.message,
         });
     }
 }

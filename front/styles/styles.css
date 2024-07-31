@@ -9,7 +9,7 @@ body {
     padding: 0;
 }
 
-.container {
+.containerok {
     display: flex;
     flex-direction: column;
     min-height: 100vh;
@@ -20,7 +20,7 @@ body {
     justify-content: space-between;
     align-items: center;
     background: rgba(0, 0, 0, 0.5);
-    padding: 0rem 1rem;
+    padding: 0 1rem;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
 }
 
@@ -32,6 +32,7 @@ body {
     font-weight: bolder;
     font-style: italic;
     color: white;
+    font-size: x-large;
 }
 
 .nav-links {
@@ -55,11 +56,11 @@ body {
 }
 
 .nav-links a:hover {
-    color: #ff6347; 
+    color: #ff6347;
 }
 
 main {
-    flex:1;
+    flex: 1;
 }
 
 .intro {
@@ -107,7 +108,7 @@ main {
     background: rgba(0, 0, 0, 0.5);
     border-radius: 10px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
-    padding: 1.5rem 1.5rem 0rem 1.5rem;
+    padding: 1.5rem;
     max-width: 300px;
     text-align: center;
     color: white;
@@ -115,15 +116,16 @@ main {
 }
 
 .card img {
-    width: 100%;
-    height: auto;
+    height: 450px;
+    width: 300px;
+    object-fit: cover;
     border-radius: 10px;
     object-fit: cover;
 }
 
 .card h3 {
     font-size: 1.5rem;
-    margin: 1rem;
+    margin: 1rem 0;
     font-family: 'Roboto', sans-serif;
     font-weight: 700;
 }
@@ -138,4 +140,46 @@ footer {
     background: rgba(0, 0, 0, 0.5);
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
     padding: 1rem;
+    color: white;
+    font-family: 'Open Sans', sans-serif;
+    font-size: 1rem;
+}
+
+footer p {
+    margin: 0;
+}
+
+/* CSS Para archivo form.html */
+
+.form-container {
+    max-width: 1000px !important;
+    margin: 0 auto !important;
+    padding: 2rem 1rem !important;
+}
+
+.form-title, .form-span {
+    font-size: 3rem;
+    margin-bottom: 2rem;
+    font-family: 'Roboto', sans-serif;
+    font-weight: 600;
+    color: white;
+}
+
+.form-title {
+    text-align: center;
+}
+
+.form-label {
+    font-size: 1.5rem;
+    font-family: 'Open Sans', sans-serif;
+    color: white;
+    font-weight: 500;
+}
+
+.form-control, .form-select, .form-check-label {
+    color: white;
+}
+
+.form-check-input {
+    accent-color: white;
 }

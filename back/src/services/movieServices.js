@@ -1,4 +1,6 @@
-class Movie {
+const Movie = require("../models/Movie");
+
+/* class Movie {
   constructor({ title, year, director, duration, genre, rate, poster }) {
       if (!title || !year || !director || !duration || !genre || !rate || !poster) {
           throw new Error("Falta información de la película");
@@ -11,11 +13,9 @@ class Movie {
       this.rate = rate;
       this.poster = poster;
   }
-}
+} */
 
-
-
-const tempData = [
+/* const tempData = [
     new Movie({
       title: "Guardians of the Galaxy Vol. 2",
       year: 2017,
@@ -46,15 +46,29 @@ const tempData = [
       poster:
         "https://m.media-amazon.com/images/M/MV5BN2EyZjM3NzUtNWUzMi00MTgxLWI0NTctMzY4M2VlOTdjZWRiXkEyXkFqcGdeQXVyNDUzOTQ5MjY@._V1_SX300.jpg",
     }),
-  ];
+  ];*/
 
 async function obtainMovies() {
-    return tempData;
-}
+  try {
+      return await Movie.find();
+  } catch (err) {
+    throw new Error("Error al obtener las películas: " + err.message);
+  }
+} 
 
-async function createMovie(movieData) {
+/* async function createMovie(movieData) {
     const movie = new Movie(movieData);
     tempData.push(movie);
+} */
+
+async function createMovie(movieData) {
+  try {
+    const movie = new Movie(movieData);
+    await movie.save();
+    return movie;
+  } catch (err) {
+  throw new Error("Error al crear la película: " + err.message);
+  }
 }
 
 module.exports = {

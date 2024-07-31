@@ -1,55 +1,53 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" type="text/css" href="styles/reset.css">
-    <link rel="stylesheet" type="text/css" href="styles/styles.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
-    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&family=Open+Sans:wght@400;700&display=swap" rel="stylesheet">
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
-    <title>Proyecto M2</title>
-  </head>
-  <body>
-    <div class="container">
-      <audio autoplay>
-        <source src="assets/cinema-music.mp3" type="audio/mpeg">
-      </audio>
-
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="stylesheet" type="text/css" href="styles/reset.css">
+  <link rel="stylesheet" type="text/css" href="styles/styles.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&family=Open+Sans:wght@400;700&display=swap" rel="stylesheet">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+  <title>Proyecto M2</title>
+</head>
+<body>
+  <div class="containerok">
+    <header>
       <nav class="navbar">
         <div class="logo">
           <img src="assets/logo2.png" alt="Logo Movierank" height="90">
-          <p> Movierank </p>
+          <p href="index.html">Movierank</p>
         </div>
         <ul class="nav-links">
-          <li><a href="https://m.cinesargentinos.com.ar/proximos/">Próximos estrenos</a></li>
-          <li><a href="https://www.sensacine.com/videos/">Trailers</a></li>
-          <li><a href="https://m.cinesargentinos.com.ar/cartelera/">Cartelera</a></li>
+          <li><a href="https://m.cinesargentinos.com.ar/proximos/" target="_blank" rel="noopener noreferrer">Próximos estrenos</a></li>
+          <li><a href="https://m.cinesargentinos.com.ar/cartelera/" target="_blank" rel="noopener noreferrer">Cartelera</a></li>
+          <li><a href="form.html">Agregá una peli</a></li>
         </ul>
       </nav>
+    </header>
 
-      <main>
-        <section class="intro">
-          <article>
-            <h1> Movierank: Ranking de mis películas favoritas </h1>
-            <p> Puntuación, trailer, opiniones, información y mucho más </p>
-          </article>
-        </section>
+    <main>
+      <section class="intro">
+        <article>
+          <h1>Movierank: Ranking de mis películas favoritas</h1>
+          <p>Puntuación, opiniones, cartelera, estrenos, todo en un sólo sitio</p>
+        </article>
+      </section>
 
-        <section class="movies">
-          <h2> Títulos </h2>
-          <article class="containercards">
-            <!-- Aquí se insertarán las tarjetas de películas -->
-          </article>
-        </section>    
-      </main>
+      <section class="movies">
+        <h2>Títulos</h2>
+        <article class="containercards">
+          <!-- Aquí se insertarán las tarjetas de películas -->
+        </article>
+      </section>
+    </main>
 
-      <footer>
-        <p>&copy; 2024 ProyectoM2. Todos los derechos reservados. | Diseñado con ♥ por Tami</p>
-      </footer>
-    </div>
+    <footer>
+      <p>&copy; 2024 ProyectoM2. Todos los derechos reservados. | Diseñado con ♥ por Tami</p>
+    </footer>
+  </div>
 
-    <!-- <script src="./scripts/index.js"></script> -->
-    <script src="./public/bundle.js"></script>
-  </body>
+  <!-- <script src="./scripts/index.js"></script> -->
+  <script src="./public/bundle.js"></script>
+</body>
 </html>
